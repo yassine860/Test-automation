@@ -8,7 +8,10 @@
 
 * Dans le Test Runner, sélectionnez le navigateur de votre choix.  
 
-* Cliquez sur le fichier de votre choix : 
-    * test.cy.js (pour les tests E2E). 
-    * api.test.cy.js (pour les tests d’API). 
-* 
+* In the Test Runner, select the browser of your choice.  
+
+* Click on the file of your choice: 
+    * test.cy.js (for E2E tests). 
+    * api.test.cy.js (for API testing). 
+* there is a video in the project root that illustrates the execution of tests with cypress
+this video is named "Video_testAutomatisation.mp4"
