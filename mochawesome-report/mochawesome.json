@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-07-24T17:57:20.443Z",
+    "end": "2025-07-24T17:57:21.874Z",
+    "duration": 1431,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f73489a9-687d-42e3-9b11-c703cdb3d1ad",
+      "title": "",
+      "fullFile": "cypress\\e2e\\api.test.cy.js",
+      "file": "cypress\\e2e\\api.test.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c17833b6-f635-4cd4-b2e6-8241f088261d",
+          "title": "API Tests based on UI Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "POST /user/login - Should fail with invalid credentials",
+              "fullTitle": "API Tests based on UI Tests POST /user/login - Should fail with invalid credentials",
+              "timedOut": null,
+              "duration": 1176,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "login('invalidemail@example.com', 'invalidpassword').then(response => {\n  expect(response.status).to.be.oneOf([400, 401, 405]); // Adjust status code based on the API's response\n  expect(response.body).to.have.property('message');\n});",
+              "err": {
+                "message": "AssertionError: Target cannot be null or undefined.",
+                "estack": "AssertionError: Target cannot be null or undefined.\n    at Context.eval (webpack:///./cypress/e2e/api.test.cy.js:24:6)\n    at getRet (http://localhost:62119/__cypress/runner/cypress_runner.js:120949:20)\n    at tryCatcher (http://localhost:62119/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:62119/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:62119/__cypress/runner/cypress_runner.js:120960:66)\n    at Context.then (http://localhost:62119/__cypress/runner/cypress_runner.js:121211:21)\n    at wrapped (http://localhost:62119/__cypress/runner/cypress_runner.js:141532:19)",
+                "diff": null
+              },
+              "uuid": "3fe573db-2326-4583-a94f-e9f4c4a86063",
+              "parentUUID": "c17833b6-f635-4cd4-b2e6-8241f088261d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "3fe573db-2326-4583-a94f-e9f4c4a86063"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1176,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "quiet": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
