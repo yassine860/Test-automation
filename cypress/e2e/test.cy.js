@@ -1,11 +1,10 @@
 Cypress.on('uncaught:exception', (err, runnable) => {
-  // Empêche Cypress de planter sur une erreur JS de la page
   return false;
 });
 
 
-describe('vérifier que la connexion est échoué avec des identifiants invalides', () => {
-  it('vérifier que la connexion est échoué avec des identifiants invalides', () => {
+describe('Test automation for MERN T-Chat application ', () => {
+  it('verify that the connection is failed with invalid credentials', () => {
     cy.visit('https://mern-t-chat.vercel.app/',{timeout:10000});
     cy.wait(2000)
     cy.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div[2]/div[1]/div/div[1]/input").type("12132emailTest@gmail.com", {force:true});
@@ -14,7 +13,7 @@ describe('vérifier que la connexion est échoué avec des identifiants invalide
     cy.wait(3000)
     cy.get('#toast-1-title').contains("Something went wrong",{timeout:6000})
   });
-  it('vérifier que la connexion est réussie avec des identifiants valides', () => {
+  it('verify that the connection is successful with valid identifiers', () => {
     cy.visit('https://mern-t-chat.vercel.app/',{timeout:10000});
     cy.wait(2000)
     cy.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div[2]/div[1]/div/div[1]/input").type("yassinesoudani1000@gmail.com", {force:true});
@@ -24,7 +23,7 @@ describe('vérifier que la connexion est échoué avec des identifiants invalide
     cy.url().should('contains', 'https://mern-t-chat.vercel.app/chats')
     cy.get('#toast-1-title').contains("Login Successful!")
   });
-  it('ajouter un groupe', () => {
+  it('add a group', () => {
     cy.visit('https://mern-t-chat.vercel.app/');
     cy.wait(2000)
     cy.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div[2]/div[1]/div/div[1]/input").type("yassinesoudani1000@gmail.com", {force:true});
@@ -46,7 +45,7 @@ describe('vérifier que la connexion est échoué avec des identifiants invalide
     cy.xpath("/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div/div[1]/p").contains("test groupe")
 
   });
-  it('modifier le nom de groupe', () => {
+  it('modify the group name', () => {
     cy.visit('https://mern-t-chat.vercel.app/');
     cy.wait(2000)
     cy.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div[2]/div[1]/div/div[1]/input").type("yassinesoudani1000@gmail.com", {force:true});
@@ -67,7 +66,7 @@ describe('vérifier que la connexion est échoué avec des identifiants invalide
     cy.xpath("/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div/div[1]/p").contains("test groupe modifié")
 
   });
-  it('supprimer un élement depuis mon panier', () => {
+  it('delete an element from my cart', () => {
     cy.visit('https://mern-t-chat.vercel.app/');
     cy.wait(2000)
     cy.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div[2]/div[1]/div/div[1]/input").type("yassinesoudani1000@gmail.com", {force:true});
